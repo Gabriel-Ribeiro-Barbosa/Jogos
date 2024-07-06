@@ -1,0 +1,80 @@
+
+[NEAT] #Rede Neural Utilizada
+fitness_criterion     = max #Objetivo sendo maximixar a pontuação
+fitness_threshold     = 1000 #Limite que o passaro pode chegar
+pop_size              = 100 #Geração de passaros
+reset_on_extinction   = False #Fazer com que não crie uma nova espécie de passaros
+
+[DefaultGenome]
+# node activation options #Nó o que liga o input ao output
+activation_default      = tanh  #Tangente Hiperbolica
+activation_mutate_rate  = 0.0   #Não Mudar
+activation_options      = tanh #Opcoes
+
+# node aggregation options
+aggregation_default     = sum #Somar os caminhos
+aggregation_mutate_rate = 0.0 #Não mudar
+aggregation_options     = sum #Opcoes
+
+# node bias options #Bias = valores aleatórios que definem a conta a ser feita, ocasionando na decissao
+bias_init_mean          = 0.0 #Média
+bias_init_stdev         = 1.0 #Desvio padrão
+bias_max_value          = 30.0 #Valor máximo
+bias_min_value          = -30.0 #Valor mínimo
+bias_mutate_power       = 0.5 #Força de mutação
+bias_mutate_rate        = 0.7 #Taxa de mutação (Chance)
+bias_replace_rate       = 0.1 #Chance de um novo valor aleatório
+
+# genome compatibility options #Parametros para definir a geração de passaros
+compatibility_disjoint_coefficient = 1.0
+compatibility_weight_coefficient   = 0.5
+
+# connection add/remove rates
+conn_add_prob           = 0.5 #Chance de adicionar conecxão(gen)
+conn_delete_prob        = 0.5 #Chance de excluir conexão(gen)
+
+# connection enable options
+enabled_default         = True
+enabled_mutate_rate     = 0.01
+
+feed_forward            = True #Ordem que ela rescebe a informação
+initial_connection      = full
+
+# node add/remove rates
+node_add_prob           = 0.2 #Adicionar nó
+node_delete_prob        = 0.2 #Remover nó
+
+# network parameters #Quantidade de inputs e outputs
+num_hidden              = 0
+num_inputs              = 3
+num_outputs             = 1
+
+# node response options #Configuração do response, número que sera multiplicado apos o gen
+response_init_mean      = 1.0
+response_init_stdev     = 0.0
+response_max_value      = 30.0
+response_min_value      = -30.0
+response_mutate_power   = 0.0
+response_mutate_rate    = 0.0
+response_replace_rate   = 0.0
+
+# connection weight options #Configuração dos pesos
+weight_init_mean        = 0.0
+weight_init_stdev       = 1.0
+weight_max_value        = 30
+weight_min_value        = -30
+weight_mutate_power     = 0.5
+weight_mutate_rate      = 0.8
+weight_replace_rate     = 0.1
+
+[DefaultSpeciesSet]
+compatibility_threshold = 3.0 #Parametro para definir espécies
+
+[DefaultStagnation]
+species_fitness_func = max #Maximizar a pontuacao
+max_stagnation       = 20 #Limite para se quebrar, se não quebrar será iliminada
+species_elitism      = 2 #Número de espécies que se manteram após o exterminio
+
+[DefaultReproduction]
+elitism            = 2 #Quantos não vão sofrer mutação
+survival_threshold = 0.2 #Dessas quanto vão poder se reproduzir
