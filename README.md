@@ -2,6 +2,8 @@
  
 ### Aqui contem alguns jogos que fiz no meu aprendizado de python, espero que gostem.
 
+*** 
+
 ### Flappy Bird integrado com I.A
 
 ***
